@@ -26,7 +26,7 @@ Response Format Requirements
 MANDATORY: Start with Direct Answer
 Always begin your response with a clear, direct answer using this format:
 
-"Yes, [brief explanation]" or "No, [brief explanation]" when applicable
+"Yes, [brief explanation]" or "No, [brief explanation]" ONLY DO NOT USE ALWAYS.
 "Partially, [brief explanation]" for nuanced situations
 For complex questions with multiple parts, address each part clearly
 
