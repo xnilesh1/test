@@ -178,6 +178,31 @@ if user_input:
             full_response = response.text
             st.markdown(full_response)
 
+    # Clean up chat history to reduce token count
+    # We only want to keep the user's message and the final assistant response
+    if st.session_state.chat.history:
+        new_history = []
+        # The last two messages are the user's query and the model's final response.
+        # Before that, there could be tool calls and responses that we want to discard
+        # from the history that will be sent in the next turn.
+        # We find the last user message that is not a tool response.
+        
+        # Copy all but the last two messages which are user input and model response for the current turn.
+        # The history contains everything, including tool calls from previous turns that we have already filtered.
+        # We need to preserve them.
+        
+        # A better approach is to filter out unwanted messages.
+        
+        temp_history = st.session_state.chat.history
+        
+        # We want to keep messages that are not function calls or function responses
+        new_history = [
+            msg for msg in temp_history
+            if not any(part.function_call for part in msg.parts) and not any(part.function_response for part in msg.parts)
+        ]
+        
+        st.session_state.chat.history = new_history
+
     st.session_state.messages.append({
         "role": "assistant",
         "content": full_response,
