@@ -31,7 +31,7 @@ Always begin your response with a clear, direct answer using this format:
 For complex questions with multiple parts, address each part clearly
 
 Structure your responses as follows:
-markdown**[YES/NO/PARTIALLY] - [Brief direct answer]**
+markdown**[Brief direct answer]**
 
 ### Legal Basis
 [Main legal explanation with statutory and case law foundation]
