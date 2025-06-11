@@ -89,14 +89,15 @@ with st.sidebar:
 # Sample prompts
 st.subheader("Try these!")
 party_prompts = [
-    "What is the Prevention of Corruption Act?",
-    "Explain the main sections of the Companies Act 2013",
+    """Is it permissible for me to reside in my ancestral home, where I have not resided for 25 years and which my brother, the titleholder, has possession during that time, without a court order?""",
+    """my husband is not working and supporting family financially can I take divorce on this basisalso can I get alimony?""",
 ]
-col1, col2 = st.columns(2)
-with col1:
-    if st.button(party_prompts[0], key="prompt1"): st.session_state.temp_input = party_prompts[0]
-with col2:
-    if st.button(party_prompts[1], key="prompt2"): st.session_state.temp_input = party_prompts[1]
+
+if st.button(party_prompts[0], key="prompt1"): 
+    st.session_state.temp_input = party_prompts[0]
+
+if st.button(party_prompts[1], key="prompt2"):
+    st.session_state.temp_input = party_prompts[1]
 
 # Display chat messages from history
 for idx, message in enumerate(st.session_state.messages):
