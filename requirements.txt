@@ -4,3 +4,4 @@ pypdf
 langchain_pinecone
 langchain
 python-dotenv
+langchain_google_genai
